@@ -27,7 +27,19 @@ export default function ContactSection() {
     e.preventDefault()
     setStatus('sending')
     // Simulate sending
-    await new Promise((r) => setTimeout(r, 1500))
+    const formData = new FormData()
+    formData.append("name", form.name)
+    formData.append("email", form.email)
+    formData.append("phone", form.phone)
+    formData.append("message", form.message)
+
+    await fetch("https://formspree.io/f/xjgenzon", {
+      method: "POST",
+      body: formData,
+      headers: {
+      Accept: "application/json",
+      },
+    })
     setStatus('sent')
     setForm({ name: '', email: '', phone: '', message: '' })
     setTimeout(() => setStatus('idle'), 4000)
@@ -58,9 +70,8 @@ export default function ContactSection() {
 
         {/* Form */}
         <form
-          action="https://formspree.io/f/xjgenzon"
-          method="POST"
-          className="glass rounded-2xl p-8 neon-border space-y-6"
+          onSubmit={handelSubmit}
+          className="glass rounded-2x1 p-8 neon-border space-y-6"
           aria-label="Contact form"
         >
           {/* Name */}
