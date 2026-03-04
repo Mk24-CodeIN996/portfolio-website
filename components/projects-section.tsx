@@ -101,7 +101,7 @@ function ProjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto animate-fade-in"
       style={{
         background: 'oklch(0.04 0.01 260 / 0.85)',
         backdropFilter: 'blur(8px)',
@@ -269,10 +269,7 @@ export default function ProjectsSection() {
               key={project.id}
               className="glass rounded-2xl overflow-hidden glass-hover group cursor-pointer"
               style={{ animationDelay: `${i * 100}ms` }}
-              onClick={() => {
-                setSelected(project)
-                window.scrollTo({ top: 0, behavior: "smooth"})
-              }}
+              onClick={() => setSelected(project)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setSelected(project)}
