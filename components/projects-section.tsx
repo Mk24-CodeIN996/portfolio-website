@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import Image from 'next/image'
+import { createPortal } from 'react-dom'
 
 interface Project {
   id: number
