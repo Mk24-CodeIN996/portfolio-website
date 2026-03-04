@@ -269,10 +269,6 @@ export default function ProjectsSection() {
               key={project.id}
               className="glass rounded-2xl overflow-hidden glass-hover group cursor-pointer"
               style={{ animationDelay: `${i * 100}ms` }}
-              onClick={() => setSelected(project)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setSelected(project)}
               aria-label={`View ${project.title} project details`}
             >
               {/* Thumbnail */}
@@ -314,6 +310,7 @@ export default function ProjectsSection() {
                   {project.shortDesc}
                 </p>
                 <button
+                  onClick={() => setSelected(project)}
                   className="btn-outline text-xs font-mono px-4 py-2 rounded-lg w-full"
                   aria-label={`Open ${project.title} details`}
                 >
