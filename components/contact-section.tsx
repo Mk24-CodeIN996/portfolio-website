@@ -70,7 +70,7 @@ export default function ContactSection() {
 
         {/* Form */}
         <form
-          onSubmit={handlrSubmit}
+          onSubmit={handleSubmit}
           className="glass rounded-2x1 p-8 neon-border space-y-6"
           aria-label="Contact form"
         >
