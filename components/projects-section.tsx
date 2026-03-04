@@ -269,7 +269,10 @@ export default function ProjectsSection() {
               key={project.id}
               className="glass rounded-2xl overflow-hidden glass-hover group cursor-pointer"
               style={{ animationDelay: `${i * 100}ms` }}
-              onClick={() => setSelected(project)}
+              onClick={() => {
+                setSelected(project)
+                window.scrollTo({ top: 0, behavior: "smooth"})
+              }}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setSelected(project)}
