@@ -200,6 +200,9 @@ function ProjectModal({
             >
               Close
             </button>
+            <div className="mt-4 text-center text-xs font-mono text-muted-forground opacity-80 animate-pulse">
+              Scroll down to se full project details . sorry for inconvenience!!
+            </div>
           </div>
         </div>
       </div>
