@@ -58,10 +58,10 @@ export default function ContactSection() {
 
         {/* Form */}
         <form
-          onSubmit={handleSubmit}
+          action="https://formspree.io/f/xjgenzon"
+          method="POST"
           className="glass rounded-2xl p-8 neon-border space-y-6"
           aria-label="Contact form"
-          noValidate
         >
           {/* Name */}
           <div className="space-y-2">
