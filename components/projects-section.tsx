@@ -328,6 +328,10 @@ export default function ProjectsSection() {
       {selected && (
         <ProjectModal project={selected} onClose={() => setSelected(null)} />
       )}
+      {selected && (
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] text-xs font-mono px-4 py-2 rounded-full glass neon-border animate-pulse">
+      </div>
+      )}
     </section>
   )
 }
