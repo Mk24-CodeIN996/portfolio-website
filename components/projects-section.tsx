@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 
 interface Project {
@@ -99,7 +100,7 @@ function ProjectModal({
     }
   }, [onClose])
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center animate-fade-in"
       style={{
@@ -115,7 +116,7 @@ function ProjectModal({
     >
       {/* Outer padding wrapper — clicking the padding area closes the modal */}
       <div
-        className="min-h-full flex items-start justify-center py-10 px-4"
+        className="min-h-full flex items-center justify-center py-10 px-4"
         onClick={(e) => e.target === e.currentTarget && onClose()}
       >
         {/* Card — no max-height, the overlay above scrolls to reveal it fully */}
